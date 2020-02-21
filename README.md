@@ -65,3 +65,16 @@ pipenv run test
 ```
 
 Todos os testes devem passar.
+
+
+
+# Implementação
+
+Temos 4 endpoints para serem implementados nesse projeto:
+
+- `POST /accounts`
+- `GET /accounts`
+- `POST /accounts/<id>/debito`
+- `POST /accounts/<id>/credito`
+
+Todos os endpoints seguem a mesma estrutura: A função que recebe o request HTTP chama um "Service". Esse service por sua vez chama um storage interno para salvar e pegar os dados. Os testes estão na pasta `tests/`.
