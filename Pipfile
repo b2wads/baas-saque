@@ -18,6 +18,7 @@ isort = {extras = ["pipfile"],version = "==4.3.15"}
 baas-account = {editable = true,path = "."}
 lxml = "==4.4.1"
 ipdb = "*"
+aioresponses = "==0.6.3"
 
 [requires]
 python_version = "3.7"
