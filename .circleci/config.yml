@@ -1,18 +1,6 @@
 version: 2.1
 
 commands:
-  fmt-check:
-    description: "Confirma que a formatação do código"
-    steps:
-      - run: "pipenv run fmt-check"
-  lint:
-    description: "Confirma que a tipagem do código está correta"
-    steps:
-      - run: "pipenv run lint"
-  isort-check:
-    description: "Confirma que a ordem dos imports está correta"
-    steps:
-      - run: "pipenv run isort-check"
   all-tests:
     description: "Roda todos os testes do projeto (unitários e integração)"
     steps:
@@ -50,9 +38,6 @@ jobs:
       - run:
           name: Install project in dev-mode
           command: pipenv run pip install -e .
-      - fmt-check
-      - isort-check
-      - lint
       - typehint-coverage
       - all-tests
       - test-coverage
