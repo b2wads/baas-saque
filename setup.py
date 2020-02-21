@@ -9,14 +9,14 @@ from setuptools import (  # Always prefer setuptools over distutils
 here = path.abspath(path.dirname(__file__))
 
 setup(
-    name="python-boilerplate",
-    version="0.0.1",
-    description="Python Boilerplate Project",
+    name="baas-account",
+    version="0.1.0",
+    description="Banco as a Service - Account",
     long_description="",
-    url="https://github.com/daltonmatos/python-boilerplate",
+    url="https://github.com/b2wdigital/baas-account",
     # Author details
     author="Dalton Matos",
-    author_email="daltonmatos@gmail.com",
+    author_email="daltonmatos@b2wdigital.com",
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3.6",
