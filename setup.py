@@ -9,9 +9,9 @@ from setuptools import (  # Always prefer setuptools over distutils
 here = path.abspath(path.dirname(__file__))
 
 setup(
-    name="baas-account",
+    name="baas-saque",
     version="0.1.0",
-    description="Banco as a Service - Account",
+    description="Banco as a Service - Saque",
     long_description="",
     url="https://github.com/b2wdigital/baas-account",
     # Author details

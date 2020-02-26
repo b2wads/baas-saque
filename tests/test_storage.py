@@ -7,8 +7,8 @@ from baas.services.saque import SaqueStorage
 class StorageTest(TestCase):
     async def setUp(self):
         self.storage = SaqueStorage()
-        self.account = Account(nome="Dalton", cpf="1234")
-        self.other_account = Account(nome="Outro", cpf="2253")
+        self.account = Account(nome="Dalton", cpf="1234", saldo=1000)
+        self.other_account = Account(nome="Outro", cpf="2253", saldo=850)
 
     async def test_get_by_date(self):
         saque = Saque(data="2020-02-21", valor=250, account=self.account)

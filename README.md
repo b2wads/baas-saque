@@ -76,3 +76,6 @@ Temos 4 endpoints para serem implementados nesse projeto:
 - `GET /saques/<acc_id>`
 
 Todos os endpoints seguem a mesma estrutura: A função que recebe o request HTTP chama um "Service". Esse service por sua vez chama um storage interno para salvar e pegar os dados. Os testes estão na pasta `tests/`.
+
+
+Os edpoints HTTP já estão implementados e chamando os Services corretos. O que precisa sser feito é preencher o método `SaqueService.save_saque()`. Esse método deve efeutar um saque usando o serviço de account para isso.
