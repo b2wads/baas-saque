@@ -23,5 +23,5 @@ async def lista_saques(req: web.Request) -> List[Saque]:
 
 
 @app.route(["/health"], type=RouteTypes.HTTP, methods=["GET"])
-async def health(req: web.Request):
+async def health():
     return web.json_response({"OK": True})
