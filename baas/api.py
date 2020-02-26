@@ -1,4 +1,4 @@
-import json
+from typing import List
 
 from aiohttp import web
 from asyncworker import RouteTypes
@@ -16,8 +16,9 @@ async def saque(acc_id: str, saque: Saque):
     raise NotImplementedError
 
 
-@app.route(["/saques"], type=RouteTypes.HTTP, methods=["GET"])
-async def lista_saques(req: web.Request):
+@app.route(["/saques/{acc_id}"], type=RouteTypes.HTTP, methods=["GET"])
+@parse_id(str)
+async def lista_saques(req: web.Request) -> List[Saque]:
     raise NotImplementedError
 
 
