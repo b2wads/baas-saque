@@ -7,6 +7,9 @@ from baas.models import Saque
 
 class SaqueStorage:
     def __init__(self):
+        self.clear()
+
+    def clear(self):
         self.__data = defaultdict(list)
         self.__by_date = defaultdict(list)
 

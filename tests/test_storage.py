@@ -32,3 +32,12 @@ class StorageTest(TestCase):
 
     async def test_get_by_acc_id_empty_list(self):
         self.assertEqual([], self.storage.get_by_acc_id("2273"))
+
+    async def test_clear_storage(self):
+        saque = Saque(data="2020-02-21", valor=250, account=self.account)
+        self.storage.save(acc_id="42", saque=saque)
+
+        saques = self.storage.get_by_date("42", "2020-02-21")
+        self.assertEqual(1, len(saques))
+        self.storage.clear()
+        self.assertEqual([], self.storage.get_by_date("42", "2020-02-21"))
