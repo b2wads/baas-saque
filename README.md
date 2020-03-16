@@ -72,7 +72,7 @@ Todos os testes devem passar.
 
 Temos 4 endpoints para serem implementados nesse projeto:
 
-- `POST /saque/<acc_id>`
+- `POST /saques/<acc_id>`
 - `GET /saques/<acc_id>`
 
 Todos os endpoints seguem a mesma estrutura: A função que recebe o request HTTP chama um "Service". Esse service por sua vez chama um storage interno para salvar e pegar os dados. Os testes estão na pasta `tests/`.

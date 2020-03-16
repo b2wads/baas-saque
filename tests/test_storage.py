@@ -10,14 +10,6 @@ class StorageTest(TestCase):
         self.account = Account(nome="Dalton", cpf="1234", saldo=1000)
         self.other_account = Account(nome="Outro", cpf="2253", saldo=850)
 
-    async def test_get_by_date(self):
-        saque = Saque(data="2020-02-21", valor=250, account=self.account)
-        self.storage.save(acc_id="42", saque=saque)
-
-        saques = self.storage.get_by_date("42", "2020-02-21")
-        self.assertEqual(1, len(saques))
-        self.assertEqual(saque.dict(), saques[0].dict())
-
     async def test_get_by_acc_id(self):
         saque = Saque(data="2020-02-21", valor=250, account=self.account)
         self.storage.save(acc_id="1234", saque=saque)
@@ -37,7 +29,8 @@ class StorageTest(TestCase):
         saque = Saque(data="2020-02-21", valor=250, account=self.account)
         self.storage.save(acc_id="42", saque=saque)
 
-        saques = self.storage.get_by_date("42", "2020-02-21")
-        self.assertEqual(1, len(saques))
+        self.assertEqual(
+            saque.dict(), self.storage.get_by_acc_id("42")[0].dict()
+        )
         self.storage.clear()
-        self.assertEqual([], self.storage.get_by_date("42", "2020-02-21"))
+        self.assertEqual([], self.storage.get_by_acc_id("42"))
