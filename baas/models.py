@@ -4,12 +4,11 @@ from pydantic import BaseModel
 
 
 class Account(BaseModel):
-    nome: str
-    cpf: str
-    saldo: int
+    nome: Optional[str]
+    cpf: Optional[str]
+    saldo: Optional[int]
 
 
 class Saque(BaseModel):
-    data: str
     valor: int
     account: Optional[Account]
