@@ -25,10 +25,7 @@ class SaqueService:
 
     @classmethod
     async def save_saque(cls, acc_id: str, saque: Saque) -> Saque:
-        acc = await AccountClient.get_by_id(acc_id)
-        await AccountClient.saque(acc, saque)
-        cls.storage.save(acc_id, saque)
-        return saque
+        raise NotImplementedError
 
     @classmethod
     def list_by_acc_id(cls, acc_id: str) -> List[Saque]:
